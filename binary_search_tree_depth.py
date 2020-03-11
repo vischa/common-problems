@@ -16,7 +16,7 @@ class Node:
 
 class Solution:
     
-    def maxDepth(self, root: 'Node') -> int:                
+    def maxDepthIterative(self, root: 'Node') -> int:                
         if not root:
             return 0  
         level=1
@@ -34,5 +34,12 @@ class Solution:
             
             
             
-            
-        
+    def maxDepthRecursive(self, root: 'Node') -> int:
+       
+        if root is None:
+            return 0
+        if root.children==[]:
+            return 1
+        else:
+            deptharray = [self.maxDepth(i) for i in root.children]
+            return max(deptharray)+1           
